@@ -57,6 +57,8 @@ public class MainRacional {
         c = new Racional(15);
         d = new Racional(b);
 
+        d.imprimr();
+
         //Casos profe
 
         a.establecer(3, 5);
