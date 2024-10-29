@@ -4,13 +4,8 @@ public class MainRacional {
     /**
      * @param args
      */
-    public static void main(String[] args) {
-        
-        Racional a,b,c,d;
-        a = new Racional(7,2);
-        b = new Racional(5,10);
-        c = new Racional(15);
-        d = new Racional(b);
+    
+    public void testOp(Racional a, Racional b, Racional c, Racional d){
 
         System.out.println();
 
@@ -51,6 +46,16 @@ public class MainRacional {
         d.potencia(2);
         System.out.print("D^2-> ");
         d.imprimr();
+
+    }
+    
+     public static void main(String[] args) {
+        
+        Racional a,b,c,d;
+        a = new Racional(7,2);
+        b = new Racional(5,10);
+        c = new Racional(15);
+        d = new Racional(b);
 
         //Casos profe
 
@@ -96,7 +101,20 @@ public class MainRacional {
         System.out.print("A/(B/c)-> ");
         a.imprimr();
 
-        System.out.println();
+        System.out.println("\n**Arreglo Racionales**\n");
+
+        //Areglo de racionales
+
+        Racional[] grupoA = new Racional[3];
+
+        grupoA[0] = new Racional();
+        grupoA[1] = new Racional(3,2);
+        grupoA[2] = new Racional(2,5);
+
+        for(int i = 0; i< grupoA.length ; i++){
+            grupoA[i].imprimr();
+        }
+
 
     }
 }

@@ -11,7 +11,7 @@ class MultiDimArrayDemo {
 
     char[] copyFrom = { 'd', 'e', 'c', 'a', 'f', 'f', 'e',
     'i', 'n', 'a', 't', 'e', 'd' };
-    char[] copyTo = new char[7];
+    char[] copyTo = new char[8];
 
     // Mr. Smith
     System.out.println(names[0][0] + names[1][0]);
@@ -20,8 +20,9 @@ class MultiDimArrayDemo {
 
     System.out.println();
 
-    System.arraycopy(copyFrom, 2, copyTo, 0, 7);
+    System.arraycopy(copyFrom, 2, copyTo, 0, copyTo.length);
     System.out.println(new String(copyTo));
+    System.out.println("Longitud 'copyFrom': "+copyFrom.length+"\nLongitud 'copyTo': "+copyTo.length+"\n");
 
     }
 

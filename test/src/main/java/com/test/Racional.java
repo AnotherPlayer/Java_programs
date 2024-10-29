@@ -166,6 +166,8 @@ public class Racional{
             System.out.println("1");
         else
             System.out.println(num+"/"+den+" ");
+
+        System.out.println();
     }
 
 }
