@@ -43,6 +43,16 @@ public class Racional{
             this.den = den;
     }
 
+    public void establecer(Racional a) {
+        
+        this.num = a.num;
+        
+        if(den==0)
+            this.den = 1;
+        else
+            this.den = a.den;
+    }
+
     public void suma(Racional a, Racional b){
 
         num = a.num + b.num;
@@ -155,19 +165,74 @@ public class Racional{
         den = (int) Math.pow(den, n);
 
         simplificar(this);
+        
+
+    }
+
+    public Racional mayorElem(Racional []a){
+
+        Racional b = new Racional(a[0]);
+
+        for(int i=0 ; i<a.length-1 ; i++){
+
+            if((float)(b.num/b.den) < (float)(a[i+1].num/a[i+1].den))
+                b = new Racional(a[i+1]);
+            
+        }
+
+        this.establecer(b);
+
+        return b;
+
+    }
+
+    public Racional menorElem(Racional []a){
+
+        Racional b = new Racional(a[0]);
+
+        for(int i=0 ; i<a.length-1 ; i++){
+
+            if((float)(b.num/b.den) > (float)(a[i+1].num/a[i+1].den))
+                b = new Racional(a[i+1]);
+            
+        }
+
+        this.establecer(b);
+
+        return b;
+
+    }
+
+    public void modaElem(Racional[] a){
+
+        int maximoNumRepeticiones= 0;
+        Racional moda = new Racional();
+    
+        for(int i=0; i<a.length; i++){
+
+            int numRepeticiones= 0;
+            for(int j=0; j<a.length; j++){
+                if(a[i] == a[j]) 
+                    numRepeticiones++;
+                    
+                if(numRepeticiones>maximoNumRepeticiones){
+                    moda.establecer(a[i]);;
+                    maximoNumRepeticiones= numRepeticiones;
+                }   
+            }
+        }
 
     }
 
     public void imprimr(){
 
-        if(den == 1)
-            System.out.println(num);
-        else if(den == num)
-            System.out.println("1");
-        else
+        //if(den == 1)
+        //    System.out.println(num);
+        //else if(den == num)
+        //    System.out.println("1");
+        //else
             System.out.println(num+"/"+den+" ");
 
-        System.out.println();
     }
 
 }

@@ -1,5 +1,7 @@
 package com.test;
 
+import java.util.Random;
+
 public class MainRacional {
     /**
      * @param args
@@ -49,17 +51,7 @@ public class MainRacional {
 
     }
     
-     public static void main(String[] args) {
-        
-        Racional a,b,c,d;
-        a = new Racional(7,2);
-        b = new Racional(5,10);
-        c = new Racional(15);
-        d = new Racional(b);
-
-        d.imprimr();
-
-        //Casos profe
+    public void ejemProfe(Racional a, Racional b, Racional c){
 
         a.establecer(3, 5);
         b.establecer(5, 2);
@@ -103,7 +95,17 @@ public class MainRacional {
         System.out.print("A/(B/c)-> ");
         a.imprimr();
 
-        System.out.println("\n**Arreglo Racionales**\n");
+    }
+
+    public static void main(String[] args) {
+        
+        Racional a,b,c,d;
+        a = new Racional(7,2);
+        b = new Racional(5,10);
+        c = new Racional(15);
+        d = new Racional(b);      
+
+        System.out.println("\n*****Arreglo Racionales*****\n");
 
         //Areglo de racionales
 
@@ -116,7 +118,32 @@ public class MainRacional {
         for(int i = 0; i< grupoA.length ; i++){
             grupoA[i].imprimr();
         }
+        
+        grupoA[0] = new Racional(3,3);
+        grupoA[1] = new Racional(2,2);
+        grupoA[2] = new Racional(1,1);
 
+        System.out.println("*****Uso de for-each*****\n");
+
+        for(Racional var : grupoA)
+            var.imprimr();
+
+
+        System.out.println("\n\n*****Generamos un arreglo racional de forma aleatoria*****\n");
+        Random rand = new Random();
+        Racional[] grupoB = new Racional[10];
+        
+        for(int i=0 ; i<grupoB.length ; i++)
+            grupoB[i] = new Racional(rand.nextInt(10),rand.nextInt(10));
+
+        for(Racional var : grupoB)
+            var.imprimr();
+
+        System.out.println("El elemento mayor del arreglo B es: ");
+        d.mayorElem(grupoB).imprimr();
+
+        System.out.println("El elemento menor del arreglo B es: ");
+        d.menorElem(grupoB).imprimr();
 
     }
 }
