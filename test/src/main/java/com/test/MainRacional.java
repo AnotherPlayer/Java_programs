@@ -40,7 +40,7 @@ public class MainRacional {
         Racional[] grupoB = new Racional[10];
 
         for(int i=0 ; i<grupoB.length ; i++)
-            grupoB[i] = new Racional(rand.nextInt(10),rand.nextInt(10));
+            grupoB[i] = new Racional(rand.nextInt(5),rand.nextInt(5));
 
         for(Racional var : grupoB)
             var.imprimr();
@@ -53,6 +53,23 @@ public class MainRacional {
 
         System.out.println("Moda del arreglo B es: ");
         d.modaElem(grupoB).imprimr();
+
+        System.out.println("*****Comparación de dos arreglos*****");
+
+        int length = 5;
+
+        Racional[] a = new Racional[length];
+        Racional[] b = new Racional[length];
+
+        for(int i=0 ; i<length ; i++){
+
+            a[i] = new Racional(5,5);
+            b[i] = new Racional(5,5);
+        }
+
+        //b[4] = new Racional(8,5);
+
+        System.out.println("Los los arreglos a y b son iguales --> "+d.comparacion(a, b));
 
     }
 }

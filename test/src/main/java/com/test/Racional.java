@@ -224,7 +224,7 @@ public class Racional{
             for(int j=i+1 ; j<a.length ; j++){
                 if(a[i].equals(a[j])){
                     numRepeticiones++;
-                    System.out.println("Repiten?--> "+a[i].equals(a[j])+", i --> "+i+", j -->"+j);
+                    System.out.println("Repiten = i --> "+i+", j --> "+j);
                 }
                     
                 if(numRepeticiones > maximoNumRepeticiones){
@@ -240,6 +240,20 @@ public class Racional{
             return moda = new Racional(111111);
 
         return moda;
+
+    }
+
+    public boolean comparacion(Racional[] a, Racional[] b){
+
+        if(a.length != b.length)
+            return false;
+
+        for(int i=0 ; i < a.length ; i++){
+            if(!(a[i].equals(b[i])))
+                return false;
+        }
+
+        return true;
 
     }
 
