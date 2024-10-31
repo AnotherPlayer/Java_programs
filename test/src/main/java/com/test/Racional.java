@@ -5,6 +5,7 @@ public class Racional{
     private int num,den;
 
     //Constructores
+
     public Racional(){  //Caso de que "Racional" no tenga parámetros
         num = 1;
         den = 1;
@@ -33,6 +34,7 @@ public class Racional{
     }
 
     // Métodos
+
     public void establecer(int num, int den) {
         
         this.num = num;
@@ -203,24 +205,39 @@ public class Racional{
 
     }
 
+    public boolean equals(Racional a){
+
+        if(a.num == this.num && a.den == this.den)
+            return true;
+
+        return false;
+        
+    }
+    
     public Racional modaElem(Racional[] a){
 
         int maximoNumRepeticiones= 0;
         Racional moda = new Racional();
     
-        for(int i=0; i<a.length; i++){
-
+        for(int i=0 ; i<a.length ; i++){
             int numRepeticiones= 0;
-            for(int j=0; j<a.length; j++){
-                if(a[i] == a[j]) 
+            for(int j=i+1 ; j<a.length ; j++){
+                if(a[i].equals(a[j])){
                     numRepeticiones++;
+                    System.out.println("Repiten?--> "+a[i].equals(a[j])+", i --> "+i+", j -->"+j);
+                }
                     
-                if(numRepeticiones>maximoNumRepeticiones){
+                if(numRepeticiones > maximoNumRepeticiones){
                     moda.establecer(a[i]);
-                    maximoNumRepeticiones= numRepeticiones;
+                    maximoNumRepeticiones = numRepeticiones;
                 }   
             }
         }
+
+        System.out.println("Valor de maxNumRept --> "+maximoNumRepeticiones+"\n");
+
+        if(maximoNumRepeticiones == 0)
+            return moda = new Racional(111111);
 
         return moda;
 

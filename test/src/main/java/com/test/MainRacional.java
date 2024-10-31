@@ -38,7 +38,7 @@ public class MainRacional {
         System.out.println("\n\n*****Generamos un arreglo racional de forma aleatoria*****\n");
         Random rand = new Random();
         Racional[] grupoB = new Racional[10];
-        
+
         for(int i=0 ; i<grupoB.length ; i++)
             grupoB[i] = new Racional(rand.nextInt(10),rand.nextInt(10));
 
@@ -52,7 +52,7 @@ public class MainRacional {
         d.menorElem(grupoB).imprimr();
 
         System.out.println("Moda del arreglo B es: ");
-        d.modaElem(grupoB).imprimr();;
+        d.modaElem(grupoB).imprimr();
 
     }
 }
