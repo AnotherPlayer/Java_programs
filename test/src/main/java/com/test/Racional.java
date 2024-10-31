@@ -203,7 +203,7 @@ public class Racional{
 
     }
 
-    public void modaElem(Racional[] a){
+    public Racional modaElem(Racional[] a){
 
         int maximoNumRepeticiones= 0;
         Racional moda = new Racional();
@@ -216,11 +216,13 @@ public class Racional{
                     numRepeticiones++;
                     
                 if(numRepeticiones>maximoNumRepeticiones){
-                    moda.establecer(a[i]);;
+                    moda.establecer(a[i]);
                     maximoNumRepeticiones= numRepeticiones;
                 }   
             }
         }
+
+        return moda;
 
     }
 
@@ -234,5 +236,98 @@ public class Racional{
             System.out.println(num+"/"+den+" ");
 
     }
+
+    //Metodos para ejemplos realizados por el profe
+
+    public void testOp(Racional a, Racional b, Racional c, Racional d){
+
+        System.out.println();
+
+        System.out.print("A->");
+        a.imprimr();
+        System.out.print("B->");
+        b.imprimr();
+        System.out.print("C-> ");
+        c.imprimr();
+        System.out.print("D->");
+        d.imprimr();
+        System.out.println();
+
+        c.suma(a, b);
+        System.out.print("A+B-> ");
+        c.imprimr();
+
+        c.suma(5,3);
+        System.out.print("A+B-> ");
+        c.imprimr();
+
+        c.resta(a, b);
+        System.out.print("A-B-> ");
+        c.imprimr();
+
+        c.producto(a, b);
+        System.out.print("A*B-> ");
+        c.imprimr();
+
+        c.producto(a);
+        System.out.print("C*A-> ");
+        c.imprimr();
+
+        c.division(a, b);
+        System.out.print("A/B-> ");
+        c.imprimr();
+
+        d.potencia(2);
+        System.out.print("D^2-> ");
+        d.imprimr();
+
+    }
+    
+    public void ejemProfe(Racional a, Racional b, Racional c){
+
+        a.establecer(3, 5);
+        b.establecer(5, 2);
+        c.establecer(8, 3);
+
+        System.out.println("\nProfe casos\n");
+
+        a.producto(1, 2);
+        System.out.print("A*1/2-> ");
+        a.imprimr();
+
+        a.establecer(3, 5);
+        b.establecer(5, 2);
+        c.establecer(8, 3);
+
+        a.producto(b.producto(c));
+        System.out.print("A*(B*C)-> ");
+        a.imprimr();
+
+        a.establecer(3, 5);
+        b.establecer(5, 2);
+        c.establecer(8, 3);
+
+        a.division(b);
+        System.out.print("A/B-> ");
+        a.imprimr();
+
+        a.establecer(3, 5);
+        b.establecer(5, 2);
+        c.establecer(8, 3);
+
+        a.division(b,c);
+        System.out.print("B/C-> ");
+        a.imprimr();
+
+        a.establecer(3, 5);
+        b.establecer(5, 2);
+        c.establecer(8, 3);
+
+        a.division(b.division(c));
+        System.out.print("A/(B/c)-> ");
+        a.imprimr();
+
+    }
+
 
 }
