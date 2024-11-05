@@ -7,25 +7,19 @@ public class Converter {
     public int binToInt(String bin){
 
         Integer a = new Integer(bin);
-
-        int x = a.byteValue();
-
-        return x;
+        return Integer.valueOf(a.toString(), 2);
 
     }
 
     public String intToBinary(int num){
 
-        Integer a = new Integer(num);
-        String x = a.toString();
-
-        return "";
+        return Integer.toString(num,2);
 
     }
 
     public int hexaToInt(int hexa){
 
-        return 0;
+        return Integer.parseInt(Integer.toHexString(hexa));
 
     }
 
