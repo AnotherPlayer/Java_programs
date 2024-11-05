@@ -1,5 +1,7 @@
 package com.test;
 
+import java.util.ArrayList;
+
 public class Racional{
 
     private int num,den;
@@ -188,6 +190,23 @@ public class Racional{
 
     }
 
+    public Racional mayorElem(ArrayList<Racional> list){
+
+        Racional b = new Racional(list.get(0));
+
+        for(int i=0 ; i<list.size()-1 ; i++){
+
+            if((float)(b.num/b.den) < (float)(list.get(+1).num/list.get(i+1).den))
+                b = new Racional(list.get(i+1));
+            
+        }
+
+        this.establecer(b);
+
+        return b;
+
+    }
+
     public Racional menorElem(Racional []a){
 
         Racional b = new Racional(a[0]);
@@ -196,6 +215,23 @@ public class Racional{
 
             if((float)(b.num/b.den) > (float)(a[i+1].num/a[i+1].den))
                 b = new Racional(a[i+1]);
+            
+        }
+
+        this.establecer(b);
+
+        return b;
+
+    }
+
+    public Racional menorElem(ArrayList<Racional> list){
+
+        Racional b = new Racional(list.get(0));
+
+        for(int i=0 ; i<list.size()-1 ; i++){
+
+            if((float)(b.num/b.den) > (float)(list.get(+1).num/list.get(i+1).den))
+                b = new Racional(list.get(i+1));
             
         }
 
@@ -234,7 +270,37 @@ public class Racional{
             }
         }
 
-        System.out.println("Valor de maxNumRept --> "+maximoNumRepeticiones+"\n");
+        //System.out.println("Valor de maxNumRept --> "+maximoNumRepeticiones+"\n");
+
+        if(maximoNumRepeticiones == 0)
+            return moda = new Racional(111111);
+
+        return moda;
+
+    }
+
+    public Racional modaElem(ArrayList<Racional> list){
+
+        int maximoNumRepeticiones= 0;
+        Racional moda = new Racional();
+    
+        for(int i=0 ; i<list.size() ; i++){
+            int numRepeticiones= 0;
+            for(int j=i+1 ; j<list.size() ; j++){
+                if((list.get(i)).equals(list.get(j))){
+                    numRepeticiones++;
+                    System.out.println("Repiten = i --> "+i+", j --> "+j);
+                }
+
+                if(numRepeticiones > maximoNumRepeticiones){
+                    moda.establecer(list.get(i));
+                    maximoNumRepeticiones = numRepeticiones;
+                }   
+            }
+        }
+
+        //System.out.println("Valor de maxNumRept --> "+maximoNumRepeticiones+"\n");
+        this.establecer(moda);
 
         if(maximoNumRepeticiones == 0)
             return moda = new Racional(111111);
@@ -257,6 +323,20 @@ public class Racional{
 
     }
 
+    public boolean comparacion(ArrayList<Racional> a, ArrayList<Racional> b){
+
+        if(a.size() != b.size())
+            return false;
+
+        for(int i=0 ; i < a.size() ; i++){
+            if(!((a.get(i)).equals(b.get(i))))
+                return false;
+        }
+
+        return true;
+
+    }
+
     public void imprimr(){
 
         //if(den == 1)
@@ -265,6 +345,23 @@ public class Racional{
         //    System.out.println("1");
         //else
             System.out.println(num+"/"+den+" ");
+
+    }
+
+    public void impList(ArrayList<Racional> list){
+
+        for (int i = 0; i < list.size(); i++)
+            System.out.println("Index: " + i + " - elemento: " + list.get(i));
+        
+    }
+
+    public String toString(){
+
+        String x;
+
+        x = (Integer.toString(this.num)+"/"+Integer.toString(this.den));
+
+        return x;
 
     }
 
@@ -359,6 +456,5 @@ public class Racional{
         a.imprimr();
 
     }
-
 
 }

@@ -13,7 +13,7 @@ public class MainConverter {
         System.out.println("cad --> "+cad);
         //Convierte un hexadecimal a un entero
         int num = conv.hexaToInt(0xF5A2);
-        System.out.println("num --> "+num);
+        //System.out.println("num --> "+num);
         //Convierte un hexadecimal a un binario representado por una cadena
         String bin = conv.hexaToBin(0xA1B5);
         //System.out.println("bin --> "+bin);
