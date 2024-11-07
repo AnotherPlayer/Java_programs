@@ -1,6 +1,7 @@
 package com.test;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class MainArrayRac {
 
@@ -8,12 +9,13 @@ public class MainArrayRac {
         
         ArrayList<Racional> list = new ArrayList<Racional>();
 
-        list.add(new Racional(5,2));
-        list.add(new Racional(8,1));
-        list.add(new Racional(9,3));
-        list.add(new Racional(7,4));
-        list.add(new Racional(9,3));
+        Random rand = new Random();
 
+        for(int i=0 ; i<10 ; i++)
+            list.add(new Racional(rand.nextInt(0, 5),rand.nextInt(0,5)));
+
+        System.out.println("Lista racionales: "+list);
+        
         Racional x = new Racional();
 
         //Mayor elemento
@@ -21,10 +23,14 @@ public class MainArrayRac {
         System.out.println("Mayor elemento de lista: ");
         x.imprimr();
 
+        System.out.println();
+
         //Menor elemento
         x.menorElem(list);
         System.out.println("Menor elemento de lista: ");
         x.imprimr();
+
+        System.out.println();
 
         //Moda
         x.modaElem(list);
@@ -40,6 +46,9 @@ public class MainArrayRac {
             a.add(new Racional(5,5));
             b.add(new Racional(5,5));
         }
+
+        b.add(2,new Racional(7,4));
+        a.remove(0);
 
         System.out.println("Lista a: "+a);      
         System.out.println("Lista b: "+b);

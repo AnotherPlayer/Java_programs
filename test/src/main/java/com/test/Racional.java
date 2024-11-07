@@ -195,10 +195,9 @@ public class Racional{
         Racional b = new Racional(list.get(0));
 
         for(int i=0 ; i<list.size()-1 ; i++){
-
-            if((float)(b.num/b.den) < (float)(list.get(+1).num/list.get(i+1).den))
+            if((b.num*list.get(i+1).den) < (list.get(i+1).num*b.den)){
                 b = new Racional(list.get(i+1));
-            
+            }
         }
 
         this.establecer(b);
@@ -211,12 +210,9 @@ public class Racional{
 
         Racional b = new Racional(a[0]);
 
-        for(int i=0 ; i<a.length-1 ; i++){
-
+        for(int i=0 ; i<a.length-1 ; i++)
             if((float)(b.num/b.den) > (float)(a[i+1].num/a[i+1].den))
                 b = new Racional(a[i+1]);
-            
-        }
 
         this.establecer(b);
 
@@ -229,10 +225,14 @@ public class Racional{
         Racional b = new Racional(list.get(0));
 
         for(int i=0 ; i<list.size()-1 ; i++){
-
-            if((float)(b.num/b.den) > (float)(list.get(+1).num/list.get(i+1).den))
+            if((b.num*list.get(i+1).den) > (list.get(i+1).num*b.den)){
                 b = new Racional(list.get(i+1));
-            
+            }
+
+            if(b.num == 0 && list.get(i+1).num == 0){
+                
+            }
+
         }
 
         this.establecer(b);
@@ -325,12 +325,16 @@ public class Racional{
 
     public boolean comparacion(ArrayList<Racional> a, ArrayList<Racional> b){
 
-        if(a.size() != b.size())
+        if(a.size() != b.size()){
+            System.out.println("Diferente longitud entre arreglos");
             return false;
+        }
 
-        for(int i=0 ; i < a.size() ; i++){
-            if(!((a.get(i)).equals(b.get(i))))
+        for(int i=0 ; i<a.size() ; i++){
+            if(!((a.get(i)).equals(b.get(i)))){
+                System.out.println("Diferentes valores entre arreglos");
                 return false;
+            }
         }
 
         return true;
