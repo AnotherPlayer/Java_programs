@@ -350,18 +350,14 @@ public class Racional{
 
     public void impList(ArrayList<Racional> list){
 
-        for (int i = 0; i < list.size(); i++)
-            System.out.println("Index: " + i + " - elemento: " + list.get(i));
+        for(Racional aux : list)
+            aux.imprimr();
         
     }
 
     public String toString(){
 
-        String x;
-
-        x = (Integer.toString(this.num)+"/"+Integer.toString(this.den));
-
-        return x;
+        return (Integer.toString(this.num)+"/"+Integer.toString(this.den));
 
     }
 
