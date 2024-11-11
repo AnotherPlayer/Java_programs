@@ -6,8 +6,7 @@ public class Converter {
 
     public int binToInt(String bin){
 
-        Integer a = new Integer(bin);
-        return Integer.valueOf(a.toString(), 2);
+        return Integer.valueOf(bin, 2);
 
     }
 
@@ -19,19 +18,19 @@ public class Converter {
 
     public int hexaToInt(int hexa){
 
-        return Integer.parseInt(Integer.toHexString(hexa));
+        return hexa;
 
     }
 
     public String hexaToBin(int hexa){
 
-        return "";
+        return Integer.toBinaryString(hexa);
 
     }
 
-    public int octalToInt(int num){
+    public int octalToInt(int oct){
 
-        return 0;
+        return oct;
 
     }
 
