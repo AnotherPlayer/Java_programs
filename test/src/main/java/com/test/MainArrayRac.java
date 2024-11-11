@@ -48,7 +48,7 @@ public class MainArrayRac {
         }
 
         b.add(2,new Racional(7,4));
-        a.remove(0);
+        b.remove(0);
 
         System.out.println("Lista a: "+a);      
         System.out.println("Lista b: "+b);

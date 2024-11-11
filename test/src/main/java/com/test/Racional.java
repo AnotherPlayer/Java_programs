@@ -195,9 +195,21 @@ public class Racional{
         Racional b = new Racional(list.get(0));
 
         for(int i=0 ; i<list.size()-1 ; i++){
-            if((b.num*list.get(i+1).den) < (list.get(i+1).num*b.den)){
-                b = new Racional(list.get(i+1));
+
+            //Comparar mayor
+            if((b.num*list.get(i+1).den) < (list.get(i+1).num*b.den))
+                b.establecer(list.get(i+1));
+
+            //Cero mayor
+            if(b.num == 0 && list.get(i+1).num == 0){
+                if(b.den > list.get(i+1).den)
+                    b.establecer(list.get(i+1));
+
+                else if(b.den < list.get(i+1).den)
+                    b.establecer(b);
+
             }
+        
         }
 
         this.establecer(b);
@@ -225,12 +237,19 @@ public class Racional{
         Racional b = new Racional(list.get(0));
 
         for(int i=0 ; i<list.size()-1 ; i++){
-            if((b.num*list.get(i+1).den) > (list.get(i+1).num*b.den)){
-                b = new Racional(list.get(i+1));
-            }
 
+            //Comparar menor
+            if((b.num*list.get(i+1).den) > (list.get(i+1).num*b.den))
+                b.establecer(list.get(i+1));
+            
+            //Cero menor
             if(b.num == 0 && list.get(i+1).num == 0){
-                
+                if(b.den < list.get(i+1).den)
+                    b.establecer(list.get(i+1));
+
+                else if(b.den > list.get(i+1).den)
+                    b.establecer(b);
+
             }
 
         }
