@@ -24,7 +24,9 @@ public class Banco {
         return cliente.get(i);
     }
 
-    
+    void transfMoney(int a, int b, double cant){
+
+    }
     
     void addMoneyAll(double money){
      
@@ -35,13 +37,18 @@ public class Banco {
 
     void imprimirCliente(){
 
+        int i=0;
+
         for(Cliente aux : this.cliente){
-            System.out.println("- "+aux+" --> ");
+            System.out.println(i+"- "+aux+" --> ");
             System.out.println("Saldo: "+aux.obtenerCuenta().consultar()+"\n");
+            i++;
         }
 
     }
     
+
+
 
 
 }
