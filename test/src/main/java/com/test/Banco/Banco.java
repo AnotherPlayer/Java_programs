@@ -16,6 +16,25 @@ public class Banco {
         numCliente++;
     }
 
+    void quitarCliente(int i){
+        System.out.println("Cliente "+cliente.remove(i).obtenerNombre()+" removido");
+        numCliente--;
+    }
+
+    void quitarCliente(String x){
+
+        
+        for(Cliente aux : cliente){
+            if(aux.obtenerNombre().equals(x)){
+                System.out.println("Cliente "+aux.obtenerNombre()+" removido");
+                cliente.remove(aux);
+                numCliente--;
+            }
+        }
+                
+
+    }
+
     int obtenerNumCliente(){
         return this.numCliente;
     }
@@ -47,17 +66,7 @@ public class Banco {
         Cliente x = new Cliente(this.obtenerCliente(a));
         Cliente y = new Cliente(this.obtenerCliente(b));
 
-        if((x.obtenerCuenta().consultar()) < cant){
-            System.out.println("El cliente "+x.obtenerNombre()+" no tiene suficiente saldo \n");
-            return;
-        }
-
-        x.obtenerCuenta().retirar(cant);
-        y.obtenerCuenta().depositar(cant);
-
-        System.out.println("Transferencia exitosa");
-        System.out.println(x.obtenerNombre()+" --> "+x.obtenerCuenta().consultar());
-        System.out.println(y.obtenerNombre()+" --> "+y.obtenerCuenta().consultar()+"\n");
+        transfDone(x, y, cant);
 
     }
 
@@ -65,6 +74,12 @@ public class Banco {
 
         Cliente x = new Cliente(this.obtenerCliente(a));
         Cliente y = new Cliente(this.obtenerCliente(b));
+
+        transfDone(x, y, cant);
+
+    }
+
+    void transfDone(Cliente x, Cliente y, double cant){
 
         if(x.obtenerCuenta().consultar() < cant){
             System.out.println("El cliente "+x.obtenerNombre()+" no tiene suficiente saldo \n");
@@ -78,7 +93,7 @@ public class Banco {
         System.out.println(x.obtenerNombre()+" --> "+x.obtenerCuenta().consultar());
         System.out.println(y.obtenerNombre()+" --> "+y.obtenerCuenta().consultar()+"\n");
 
-    }   
+    }
 
     void imprimirCliente(){
 
@@ -92,8 +107,4 @@ public class Banco {
         System.out.println();
     }
     
-
-
-
-
 }

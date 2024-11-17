@@ -51,6 +51,13 @@ public class Bankito {
         b.transfMoney(2, 0, 150);
         b.transfMoney("Hector", "Didier", 800);
 
+        System.out.println("Numero de clientes --> "+b.obtenerNumCliente());
+        b.imprimirCliente();
+
+        b.quitarCliente(2);
+        b.imprimirCliente();
+
+        b.quitarCliente("David");
         b.imprimirCliente();
 
     }   
