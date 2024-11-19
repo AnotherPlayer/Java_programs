@@ -95,6 +95,41 @@ public class Banco {
 
     }
 
+    void showSaldo(String nom){
+
+        for(Cliente aux : this.cliente){
+            if(aux.obtenerNombre() == nom){
+            System.out.println("--> Saldo de "+aux.obtenerNombre()+" es "+aux.obtenerCuenta().consultar());
+            return;
+            }
+        }
+
+        System.out.println("Usuario no encontrado");
+
+    }
+
+    void addMoneyOne(String nom, double money){
+
+        for(Cliente aux : this.cliente){
+            if(aux.obtenerNombre() == nom){
+                aux.obtenerCuenta().depositar(money);
+                return;
+            }
+        }
+
+    }
+
+    void removeMoneyOne(String nom, double money){
+
+        for(Cliente aux : this.cliente){
+            if(aux.obtenerNombre() == nom){
+                aux.obtenerCuenta().retirar(money);
+                return;
+            }
+        }
+
+    }
+
     void imprimirCliente(){
 
         int i=0;

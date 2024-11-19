@@ -43,6 +43,16 @@ public class Bankito {
 
         b.addMoneyAll(1500);
 
+        System.out.println("\n------------------------------\n");
+
+        b.showSaldo("Didier");
+        b.addMoneyOne("Didier", 500);
+        b.showSaldo("Didier");
+        b.removeMoneyOne("Didier", 400);
+        b.showSaldo("Didier");
+
+        System.out.println("\n------------------------------\n");
+
         b.imprimirCliente();
 
         //Transferencias
