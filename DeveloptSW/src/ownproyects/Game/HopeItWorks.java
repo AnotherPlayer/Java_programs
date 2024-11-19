@@ -17,7 +17,7 @@ public class HopeItWorks extends JFrame {
 
         JFrame frm = new JFrame();
         frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Test_1 backgr = new Test_1();
+        Test1 backgr = new Test1();
 
         rect = backgr.getBounds();
         pantalla screen = new pantalla((int) rect.width, (int) rect.height, backgr);
@@ -39,9 +39,9 @@ class pantalla extends Canvas implements Runnable {
     private int x, y, dir;
     private Thread t;
     private boolean running;
-    private Test_1 backgr;
+    private Test1 backgr;
 
-    public pantalla(int x, int y, Test_1 backgr) {
+    public pantalla(int x, int y, Test1 backgr) {
         setSize(x, y);
         rect = getBounds();
         this.backgr = backgr;

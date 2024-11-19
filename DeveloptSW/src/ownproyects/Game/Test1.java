@@ -20,43 +20,43 @@ import javax.swing.Timer;
 
 @SuppressWarnings("unused")
 
-class Test_2 extends JPanel implements KeyListener {
+class Test1 extends JPanel implements KeyListener {
 
     private Timer t;
     private int sp1, sp2, b;
     private Rectangle2D p1, p2;
-    private int spot1, spot2, ballmove_x, ballmove_y;
+    private int spot1, spot2, ballmove;
     private String scorep1, scorep2;
     private Shape ball;
     private AffineTransform atball;
-
+    private boolean flag;
+    
     //Constructor
-    public Test_2() {
+    public Test1() {
 
         this.addKeyListener(this);
         this.setFocusable(true);
 
         this.setPreferredSize(new Dimension(500, 500));
         this.setBackground(Color.BLACK);
-
+        
+       
         sp1 = 0;
         sp2 = 0;
         scorep1 = "Player 1:";
         scorep2 = "Player 2:";
         spot1 = 400;
         spot2 = 400;
-        ballmove_x = 5;
-        ballmove_y = 5;
+        ballmove = 5;
         b = (int) (Math.random() * 2) + 1;
 
         atball = new AffineTransform();
-
         ball = new Ellipse2D.Double(250, 250, 20, 20);
 
         this.setLayout(null);
 
         //Timer
-        t = new Timer(50, new ActionListener() {
+        t = new Timer(50, new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
 
@@ -66,32 +66,25 @@ class Test_2 extends JPanel implements KeyListener {
                 ball = atball.createTransformedShape(ball);
 
                 if (b == 1) {
-                    atball.setToTranslation(ballmove_x, ballmove_y);
+                    atball.setToTranslation(ballmove, 0);
                 } else if (b == 2) {
-                    atball.setToTranslation((ballmove_x * (-1)), ballmove_y * (-1));
+                    atball.setToTranslation((ballmove * (-1)), 0);
                 }
 
+                //Moviemnto de la pelota al pegar con una barrera
                 if (ball.intersects(p1)) {
-                    ballmove_x = -5;
+                    ballmove = -ballmove;
+                    atball.setToTranslation( ballmove, 0);
+                    
                 }
 
                 if (ball.intersects(p2)) {
-                    ballmove_x = 5;
+                    ballmove = -ballmove;
+                    atball.setToTranslation( ballmove, 0);
                 }
                 
-                if(ball.getBounds().getY() == 40 || ball.getBounds().getY() == 460){
-                    
-                    if(ball.getBounds().getY() == 40){
-                        ballmove_y = 5;                       
-                    }
-                    
-                    if(ball.getBounds().getY() == 460){                        
-                        ballmove_y = -5;                        
-                    }
-                    
-                }
-
-                if (ball.getBounds().getX() == 40 || ball.getBounds().getX() == 460) {
+                //Pelota cuando llega a los bordes
+                if (ball.getBounds().getX() == 20 || ball.getBounds().getX() == 480) {
                     if (ball.getBounds().getX() == 40) {
                         sp2++;
                     }
@@ -105,7 +98,6 @@ class Test_2 extends JPanel implements KeyListener {
                 }
                 
                 
-
                 repaint();
 
             }
@@ -113,6 +105,36 @@ class Test_2 extends JPanel implements KeyListener {
 
         t.start();
 
+    }
+    
+    
+    void golpe(Shape ball, Rectangle2D p1,Rectangle2D p2){
+        
+        if (ball.intersects(p1)) {
+                    ballmove = -ballmove;
+                    atball.setToTranslation( ballmove, 0);
+                }
+
+                if (ball.intersects(p2)) {
+                    ballmove = -ballmove;
+                    atball.setToTranslation( ballmove, 0);
+                }
+                
+                //Pelota cuando llega a los bordes
+                if (ball.getBounds().getX() == 20 || ball.getBounds().getX() == 480) {
+                    if (ball.getBounds().getX() == 40) {
+                        sp2++;
+                    }
+                    if (ball.getBounds().getX() == 460) {
+                        sp1++;
+                    }
+
+                    b = (int) (Math.random() * 2) + 1;
+                    ball = new Ellipse2D.Double(250, 250, 20, 20);
+
+                }
+                
+        
     }
 
     //Paint
