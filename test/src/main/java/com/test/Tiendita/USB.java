@@ -4,9 +4,6 @@
  */
 package com.test.Tiendita;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author renat
