@@ -2,8 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.mycompany.tiendita;
-import com.mycompany.tiendita.USB; 
+package com.test.Tiendita;
 
 import java.util.ArrayList;
 /**
