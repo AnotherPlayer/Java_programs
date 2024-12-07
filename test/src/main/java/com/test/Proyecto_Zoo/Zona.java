@@ -5,28 +5,48 @@ import java.util.ArrayList;
 public class Zona {
 
     private ArrayList<Animal> anim = new ArrayList<>();
-    private int codeZone;
     private String nameZone;
 
     public Zona(){
 
-        codeZone = 0;
-        nameZone = "Unknown";
+        this.nameZone = "Unknown";
 
     }
 
-    public void addAnimal(){
+    public Zona(String name){
+
+        this.nameZone = name;
 
     }
 
-    public void deleteAnimal(){
+    public String toString(){
+        return("\tZona "+this.nameZone+"\n\t#Animales --> "+anim.size());
+    }
+
+    public void addAnimal(String name, String tipo){
+        anim.add(new Animal(name,tipo));
+    }
+
+    public void deleteAnimal(int i){
 
     }
 
-    public void statusZone(){
+    public void deleteAnimal(String s){
 
     }
 
-    
+    public void showAnimals(){
+
+    }
+
+    public Zona getZona(){
+        return this;
+    }
+
+    public void showDataZone(){
+        System.out.println(this);
+    }
+
+
     
 }

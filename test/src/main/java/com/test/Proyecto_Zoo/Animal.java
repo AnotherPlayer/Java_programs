@@ -3,35 +3,61 @@ package com.test.Proyecto_Zoo;
 public class Animal {
 
     private String name;
-    private int Nojaula=0;
     private int estado;//Vivo o muerto
     private int hambre;
+    private String tipo;
     private final int max = 20;
 
-    public Animal(String name){
+    public Animal(String name, String tipo){
 
         this.name = name;
-        this.Nojaula++;
+        this.tipo = tipo;
         this.estado=1;
         this.hambre=5;
 
     }
 
     public String toString(){
-        return ("Nombre --> "+this.name+" / #Jaula --> "+this.Nojaula+" / Estado --> "+this.estado+" / Hambre"+this.hambre);
+        return ("\t**"+this.name+"\n\tTipo --> "+this.tipo+
+        "\n\tEstado --> "+this.estado()+"\n\tHambre --> "+this.hambre+"\n");
     }
 
-    public void estado(Animal anim){
-        System.out.println(anim);
-    }
+    public int addHammbre(int n){
 
-    public int alimentar(int n){
-
-        if(n>max-this.hambre)
+        if(n>max-this.hambre){
+            System.out.println("Supera capacidad maxima de hambre\n");
             return 0;
+        }
 
         return this.hambre += n; 
             
+    }
+
+    public void lessHambre(){
+
+        this.hambre -= 2;
+
+        if(this.hambre <= 0){
+            this.estado = 0;
+        }
+
+    }
+
+    public String estado(){
+
+        if(this.estado == 1)
+            return "vivo";
+
+        return "muerto";
+
+    }
+
+    public Animal getAnimal(){
+        return this;
+    }
+
+    public void showDataAnimal(){
+        System.out.println(this);
     }
 
 }
