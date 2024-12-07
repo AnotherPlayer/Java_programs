@@ -10,6 +10,7 @@ import java.util.*;
  */
 public class Ordenamiento {
 
+//En caso de que no corra al ser obsoleto, colocar en consola --> javac file.java -target 18
     
   public static void main(String [ ] args) throws ParseException{
    List<String> nombres = Arrays.asList(
