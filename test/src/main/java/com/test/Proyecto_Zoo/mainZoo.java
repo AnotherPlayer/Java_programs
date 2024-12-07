@@ -8,8 +8,14 @@ public class mainZoo {
         Zona z2 = new Zona("Zauna");
 
         z2.addAnimal("Panda", "Terrestre");
+        z2.addAnimal("Tigre", "Terrestre");
+        z2.addAnimal("Pez", "Acuatico");
+        z2.addAnimal("Aguila", "Volador");
+        z2.addAnimal("Mantis", "Insecto");
 
         z2.showDataZone();
+
+        z2.showAnimals();
 
     }
 

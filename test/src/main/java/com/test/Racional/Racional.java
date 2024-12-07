@@ -362,11 +362,11 @@ public class Racional{
 
     public void imprimr(){
 
-        //if(den == 1)
-        //    System.out.println(num);
-        //else if(den == num)
-        //    System.out.println("1");
-        //else
+        if(den == 1)
+            System.out.println(num);
+        else if(den == num)
+            System.out.println("1");
+        else
             System.out.println(num+"/"+den+" ");
 
     }

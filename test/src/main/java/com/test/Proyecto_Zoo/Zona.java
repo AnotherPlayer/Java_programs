@@ -19,10 +19,6 @@ public class Zona {
 
     }
 
-    public String toString(){
-        return("\tZona "+this.nameZone+"\n\t#Animales --> "+anim.size());
-    }
-
     public void addAnimal(String name, String tipo){
         anim.add(new Animal(name,tipo));
     }
@@ -37,6 +33,13 @@ public class Zona {
 
     public void showAnimals(){
 
+        for(Animal a : anim)
+            System.out.println(a);
+
+    }
+
+    public String getZonaName(){
+        return this.nameZone;
     }
 
     public Zona getZona(){
@@ -47,6 +50,9 @@ public class Zona {
         System.out.println(this);
     }
 
+    public String toString(){
+        return("\tZona "+this.nameZone+"\n\t#Animales --> "+anim.size()+"\n");
+    }
 
     
 }

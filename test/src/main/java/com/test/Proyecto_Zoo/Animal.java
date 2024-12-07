@@ -17,11 +17,6 @@ public class Animal {
 
     }
 
-    public String toString(){
-        return ("\t**"+this.name+"\n\tTipo --> "+this.tipo+
-        "\n\tEstado --> "+this.estado()+"\n\tHambre --> "+this.hambre+"\n");
-    }
-
     public int addHammbre(int n){
 
         if(n>max-this.hambre){
@@ -58,6 +53,11 @@ public class Animal {
 
     public void showDataAnimal(){
         System.out.println(this);
+    }
+
+    public String toString(){
+        return ("\t**"+this.name+"**\n\tTipo --> "+this.tipo+
+        "\n\tEstado --> "+this.estado()+"\n\tHambre --> "+this.hambre+"\n");
     }
 
 }

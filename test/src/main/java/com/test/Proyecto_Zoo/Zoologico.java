@@ -6,7 +6,6 @@ public class Zoologico {
     private String name;
     private int code = 0;
     private int noResources = 50;
-    private int turno=1;
 
     //1° turno --> 
     //2° turno --> 
@@ -17,7 +16,7 @@ public class Zoologico {
 
         name = "Nameless";
         code = 000;
-        turno = 0;
+        this.initZonas();
 
     }
 
@@ -25,16 +24,18 @@ public class Zoologico {
 
         this.name = name;
         code++;
-        turno = 0;
+        this.initZonas();
 
     }
 
-    public String toString(){
-        return ("Zoologico '"+this.name+"' / Codigo --> "+code+" / #Recursos --> "+this.noResources);
-    }
+    public void initZonas(){
 
-    public void nextTurno(){
-        turno++;
+        zone[0] = new Zona("Selva");
+        zone[1] = new Zona("Bosque");
+        zone[2] = new Zona("Polar");
+        zone[3] = new Zona("Desierto");
+        zone[4] = new Zona("Acuatico");
+
     }
 
     public void showDataZoo(){
@@ -43,8 +44,13 @@ public class Zoologico {
 
     public void showDataZone(String name){
 
-        
+        for(Zona z : zone)
+            if(z.getZonaName().equals(name))
+                System.out.println(z.toString());
+    }
 
+    public String toString(){
+        return ("Zoologico '"+this.name+"' / Codigo --> "+code+" / #Recursos --> "+this.noResources);
     }
 
 }
