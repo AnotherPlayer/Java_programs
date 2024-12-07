@@ -38,8 +38,21 @@ public class Zoologico {
 
     }
 
+    public void feedZone(){
+
+    }
+
+    public void feedAnimal(){
+
+    }
+
+
     public void showDataZoo(){
         System.out.println(this);
+    }
+
+    public void showDataAnimal(String name){
+
     }
 
     public void showDataZone(String name){
