@@ -53,6 +53,10 @@ public class Animal {
         return this.hambre;
     }
 
+    public int getHambreRestante(){
+        return (this.max-this.hambre);
+    }
+
     public String getNombre(){
         return this.name;
     }

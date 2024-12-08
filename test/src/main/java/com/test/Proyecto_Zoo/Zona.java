@@ -58,13 +58,13 @@ public class Zona {
 
     }
 
-    //Relacionado con la Zona en general
+    //Relacionado con toda la Zona
     public int getHambreZona(){
 
         int sumHambre=0;
 
         for(Animal a : anim)
-            sumHambre += a.getHambre();
+            sumHambre = a.getHambreRestante();
 
         return sumHambre;
     }
@@ -80,6 +80,15 @@ public class Zona {
 
     }
 
+    public void showAnimalsName(){
+
+        for(Animal a : anim)
+            System.out.print(a.getNombre()+", ");
+
+        System.out.println();
+
+    }
+
     public String getZonaName(){
         return this.nameZone;
     }
@@ -88,6 +97,7 @@ public class Zona {
         return this;
     }
 
+    //Show Data of Zona
     public void showDataZone(){
         System.out.println(this);
     }
