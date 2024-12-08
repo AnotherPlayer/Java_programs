@@ -19,7 +19,6 @@ public class Zona {
 
     }
 
-
     //Relacionado con animales
     public void addAnimal(String name, String tipo){
         anim.add(new Animal(name,tipo));
@@ -34,7 +33,8 @@ public class Zona {
         for (Animal a : anim){
             if(a.getNombre().equals(s)){
                 System.out.println("--> "+a.getNombre()+" eliminado de "+this.nameZone);
-                System.out.println(anim.remove(a));
+                anim.remove(a);
+                return;
             }
         }
     }
@@ -71,8 +71,12 @@ public class Zona {
 
     public void showAnimals(){
 
+        System.out.println("---------------------------------");
+
         for(Animal a : anim)
             System.out.println(a);
+
+        System.out.println("---------------------------------");
 
     }
 
