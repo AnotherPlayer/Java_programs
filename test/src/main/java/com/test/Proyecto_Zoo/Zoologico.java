@@ -38,7 +38,19 @@ public class Zoologico {
 
     }
 
-    public void feedZone(){
+    public void feedZone(int iZone, int cant){
+
+        if(zone[iZone].getHambreZona() > this.noResources)
+            zone[iZone].feedAll(cant);
+
+    }
+
+    public void feedZone(String nameZone, int cant){
+
+        for(Zona z : zone)
+            if(z.getZonaName().equals(nameZone) && z.getHambreZona() > this.noResources)
+                z.feedAll(cant);
+                
 
     }
 

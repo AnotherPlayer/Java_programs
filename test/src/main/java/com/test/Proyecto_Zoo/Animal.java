@@ -17,6 +17,7 @@ public class Animal {
 
     }
 
+    //Relacionado con Hambre
     public int addHammbre(int n){
 
         if(n>max-this.hambre){
@@ -38,6 +39,16 @@ public class Animal {
 
     }
 
+    //Getters
+    public int getHambre(){
+        return this.hambre;
+    }
+
+    public String getNombre(){
+        return this.name;
+    }
+
+    //Show Data of animals
     public String estado(){
 
         if(this.estado == 1)

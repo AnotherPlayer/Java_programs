@@ -4,7 +4,6 @@ public class mainZoo {
  
     public static void main(String[] args) {
 
-        Zona z1 = new Zona();
         Zona z2 = new Zona("Zauna");
 
         z2.addAnimal("Panda", "Terrestre");
@@ -14,6 +13,11 @@ public class mainZoo {
         z2.addAnimal("Mantis", "Insecto");
 
         z2.showDataZone();
+
+        z2.showAnimals();
+
+        z2.deleteAnimal(0);
+        z2.deleteAnimal("Mantis");
 
         z2.showAnimals();
 
