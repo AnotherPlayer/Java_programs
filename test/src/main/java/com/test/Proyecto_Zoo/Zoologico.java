@@ -78,6 +78,14 @@ public class Zoologico {
 
     public void showDataAnimal(String name){
 
+        for(Zona z : zone)
+            if(!(z.getAnimal(name).getNombre().equals("unknown"))){
+                z.getAnimal(name).showDataAnimal();
+                return;
+            }
+
+        System.out.println("Animal no encontrado");
+
     }
 
     public void showDataZone(String name){
