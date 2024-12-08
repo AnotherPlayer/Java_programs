@@ -22,7 +22,6 @@ public class Banco {
     }
 
     void quitarCliente(String x){
-
         
         for(Cliente aux : cliente){
             if(aux.obtenerNombre().equals(x)){

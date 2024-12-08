@@ -17,9 +17,10 @@ public class mainZoo {
         z2.showAnimals();
 
         z2.deleteAnimal(0);
-        z2.deleteAnimal("Mantis");
 
-        z2.showAnimals();
+        z2.showDataZone();
+
+        z2.deleteAnimal("Mantis");
 
     }
 

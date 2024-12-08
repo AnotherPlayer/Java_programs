@@ -4,7 +4,6 @@ public class Zoologico {
 
     private Zona[] zone = new Zona[5];
     private String name;
-    private int code = 0;
     private int noResources = 50;
 
     //1° turno --> 
@@ -15,7 +14,6 @@ public class Zoologico {
     public Zoologico(){
 
         name = "Nameless";
-        code = 000;
         this.initZonas();
 
     }
@@ -23,7 +21,6 @@ public class Zoologico {
     public Zoologico(String name){
 
         this.name = name;
-        code++;
         this.initZonas();
 
     }
@@ -54,8 +51,24 @@ public class Zoologico {
 
     }
 
-    public void feedAnimal(){
+    public void feedAnimal(String Zname, String Aname, int cant){
 
+        for(Zona z : zone)
+            if(z.getZonaName().equals(Zname))
+                z.getAnimal(Aname).addHambre(cant);
+
+    }
+
+    public void feedAnimal(String Zname, int Ai, int cant){
+
+        for(Zona z : zone)
+            if(z.getZonaName().equals(Zname))
+                z.getAnimal(Ai).addHambre(cant);
+
+    }
+
+    public void feedAnimal(int Zi, String Ai, int cant){
+        zone[Zi].getAnimal(Ai).addHambre(cant);
     }
 
 
@@ -75,7 +88,7 @@ public class Zoologico {
     }
 
     public String toString(){
-        return ("Zoologico '"+this.name+"' / Codigo --> "+code+" / #Recursos --> "+this.noResources);
+        return ("Zoologico '"+this.name+" / #Recursos --> "+this.noResources);
     }
 
 }

@@ -31,19 +31,32 @@ public class Zona {
 
     public void deleteAnimal(String s){
 
-        for (Animal a : anim)
+        for (Animal a : anim){
             if(a.getNombre().equals(s)){
-                System.out.println("--> "+a.getNombre()+" eliminaod de "+this.nameZone);
-                anim.remove(a);
+                System.out.println("--> "+a.getNombre()+" eliminado de "+this.nameZone);
+                System.out.println(anim.remove(a));
             }
-
+        }
     }
 
     public void feedAll(int cant){
         for(Animal a : anim)
-            a.addHammbre(cant);
+            a.addHambre(cant);
     }
 
+    public Animal getAnimal(int i){
+        return anim.get(i);
+    }
+
+    public Animal getAnimal(String Aname){
+        
+        for (Animal a : anim)
+            if(a.getNombre().equals(Aname))
+                return a;
+
+        return new Animal();
+
+    }
 
     //Relacionado con la Zona en general
     public int getHambreZona(){

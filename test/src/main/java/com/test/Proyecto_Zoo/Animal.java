@@ -8,6 +8,15 @@ public class Animal {
     private String tipo;
     private final int max = 20;
 
+    public Animal(){
+
+        this.name = "unknown";
+        this.tipo = "unknown";
+        this.estado=0;
+        this.hambre=0;
+
+    }
+
     public Animal(String name, String tipo){
 
         this.name = name;
@@ -18,7 +27,7 @@ public class Animal {
     }
 
     //Relacionado con Hambre
-    public int addHammbre(int n){
+    public int addHambre(int n){
 
         if(n>max-this.hambre){
             System.out.println("Supera capacidad maxima de hambre\n");
@@ -46,6 +55,10 @@ public class Animal {
 
     public String getNombre(){
         return this.name;
+    }
+
+    public String getTipo(){
+        return this.tipo;
     }
 
     //Show Data of animals
