@@ -64,9 +64,16 @@ public class Zona {
         int sumHambre=0;
 
         for(Animal a : anim)
-            sumHambre = a.getHambreRestante();
+            sumHambre += a.getHambreRestante();
 
         return sumHambre;
+    }
+
+    public void restHambreZona(){
+
+        for(Animal a: anim)
+            a.lessHambre();
+
     }
 
     public void showAnimals(){

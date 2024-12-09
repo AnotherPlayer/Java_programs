@@ -73,6 +73,14 @@ public class Zoologico {
         zone[Zi].getAnimal(Ai).addHambre(cant);
     }
 
+    //Quitar hambre toda la Zona
+    public void restHambreZoo(){
+
+        for(Zona z : zone)
+            z.restHambreZona();
+
+    }
+    
     //Agregar animal a zona
     public void addAnimaltoZone(String Aname, String Atipo, String Zname){
 
@@ -140,6 +148,20 @@ public class Zoologico {
 
     public void addResources(int n){
         this.noResources += n;
+    }
+
+    public int getPuntos(){
+        return this.noResources;
+    }
+
+    public Zona getZona(String Zname){
+        
+        for(Zona z : zone)
+            if(z.getZonaName().equals(Zname))
+                return z;
+
+        return new Zona();
+
     }
 
     //Show Data of Zoologico
