@@ -51,12 +51,12 @@ public class mainZoo {
 
     public static void textReglas(){
 
-        System.out.println("--Reglas de juego--");
+        System.out.println("\n--Reglas de juego--");
         System.out.println("Tendras un Zoologico en el que deberas gestionar el hambre de los animales de tu Zoologico para que sobrevivan.");
         System.out.println("Empezaras con 50 puntos y cada turno te dara 10 puntos mas");
         System.out.println("En caso de llegar a un turno multiplo de 5 (5,10,15,..), recibirás 20 puntos");
         System.out.println("Por turno cada animal perdera 2 de hambre");
-        System.out.println("Cambiar de tueno al alimentar un animal o zona");
+        System.out.println("Cambiar de tueno al alimentar un animal o zona\n");
 
     }
 
@@ -141,7 +141,7 @@ public class mainZoo {
         switch(opt){
             
             case 1:
-                feedZona(zoo, cant);
+                cant = feedZona(zoo, cant);
                 break;
 
             case 2:
@@ -158,7 +158,7 @@ public class mainZoo {
 
     }
 
-    public static void feedZona(Zoologico zoo, int cant){
+    public static int feedZona(Zoologico zoo, int cant){
 
         String opt;
 
@@ -168,6 +168,8 @@ public class mainZoo {
         opt = s.nextLine();
 
         zoo.feedZone(opt, cant);
+
+        return (cant*zoo.getZona(opt).getNumAnimales());
 
     }
 
@@ -192,8 +194,6 @@ public class mainZoo {
 
 
     public static void main(String[] args) {
-
-        //N° turno --> -10 resources
 
         int turno = 1;
         final int cant = 10;
@@ -236,12 +236,6 @@ public class mainZoo {
                     System.out.println("-----Opcion no valida-----\n");
                     break;
             }
-
-            
-
         }
-
-        
     }
-
 }

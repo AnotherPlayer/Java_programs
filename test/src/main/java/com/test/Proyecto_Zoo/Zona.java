@@ -44,6 +44,10 @@ public class Zona {
             a.addHambre(cant);
     }
 
+    public int getNumAnimales(){
+        return anim.size();
+    }
+
     public Animal getAnimal(int i){
         return anim.get(i);
     }

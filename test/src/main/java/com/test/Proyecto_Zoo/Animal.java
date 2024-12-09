@@ -17,6 +17,13 @@ public class Animal {
 
     }
 
+    public Animal(String name){
+        this.name = name;
+        this.tipo = "unkonwn";
+        this.estado=1;
+        this.hambre=5;
+    }
+
     public Animal(String name, String tipo){
 
         this.name = name;

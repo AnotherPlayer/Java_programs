@@ -34,15 +34,14 @@ public class Zoologico {
     //Alimentar zonas
     public void feedZone(int iZone, int cant){
 
-        if(zone[iZone].getHambreZona() > this.noResources)
-            zone[iZone].feedAll(cant);
+        zone[iZone].feedAll(cant);
 
     }
 
     public void feedZone(String nameZone, int cant){
 
         for(Zona z : zone)
-            if(z.getZonaName().equals(nameZone) && z.getHambreZona() > this.noResources)
+            if(z.getZonaName().equals(nameZone))
                 z.feedAll(cant);
                 
 
@@ -184,8 +183,10 @@ public class Zoologico {
     public void showDataZone(String name){
 
         for(Zona z : zone)
-            if(z.getZonaName().equals(name))
+            if(z.getZonaName().equals(name)){
                 System.out.println(z.toString());
+                z.showAnimals();
+            }
     }
 
     public void showDataAllZone(){
