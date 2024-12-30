@@ -43,6 +43,7 @@ public class mainZoo {
         System.out.print("Seleccione una opcion:\n# de puntos --> "+zoo.getPuntos());
         System.out.print("\n0.- --> Terminar\n1.- --> Opciones ver estado Zoologico\n2.- --> Opciones Alimentar\n3.- --> Reglas\n----->");
 
+        @SuppressWarnings("resource")
         Scanner scan = new Scanner(System.in);
 
         return turno = scan.nextInt();
@@ -68,6 +69,7 @@ public class mainZoo {
         System.out.println("Selecione una opcion:\n");
         System.out.print("1.- Todo el Zoologico\n2.- Ver una zona\n3.- Ver un animal\n--> ");
 
+        @SuppressWarnings("resource")
         Scanner s = new Scanner(System.in);
 
         opt = s.nextInt();
@@ -102,6 +104,7 @@ public class mainZoo {
         String opt;
 
         System.out.print("Escriba la Zona que busca: ");
+        @SuppressWarnings("resource")
         Scanner s = new Scanner(System.in);
 
         opt = s.nextLine();
@@ -117,6 +120,7 @@ public class mainZoo {
 
         System.out.println("Escriba al Animal que busca: ");
 
+        @SuppressWarnings("resource")
         Scanner s = new Scanner(System.in);
         opt = s.nextLine();
 
@@ -132,6 +136,7 @@ public class mainZoo {
         System.out.println("Seleccione una opcion:");
         System.out.print("1.- Alimentar toda una Zona\n2.- Alimentar un Animal\n-->");
 
+        @SuppressWarnings("resource")
         Scanner s = new Scanner(System.in);
         opt = s.nextInt();
 
@@ -164,6 +169,7 @@ public class mainZoo {
 
         System.out.println("Escriba una Zona: ");
 
+        @SuppressWarnings("resource")
         Scanner s = new Scanner(System.in);
         opt = s.nextLine();
 
@@ -179,6 +185,7 @@ public class mainZoo {
 
         System.out.println("Escriba una Zona: ");
 
+        @SuppressWarnings("resource")
         Scanner s = new Scanner(System.in);
         opt = s.nextLine();
 
